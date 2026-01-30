@@ -45,32 +45,14 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/complex-base-assert-is-almost-equal
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var isAlmostEqual = require( '@stdlib/complex-base-assert-is-almost-equal' );
+import isAlmostEqual from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-base-assert-is-almost-equal@deno/mod.js';
 ```
 
 #### isAlmostEqual( z1, z2, maxULP )
@@ -78,8 +60,8 @@ var isAlmostEqual = require( '@stdlib/complex-base-assert-is-almost-equal' );
 Tests whether two complex numbers are approximately equal within a specified number of ULPs (units in the last place).
 
 ```javascript
-var EPS = require( '@stdlib/constants-float64-eps' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
+import EPS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-eps@deno/mod.js';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@deno/mod.js';
 
 var z1 = new Complex128( 1.0, 3.0 );
 var z2 = new Complex128( 1.0+EPS, 3.0 );
@@ -94,7 +76,7 @@ out = isAlmostEqual( z1, z2, 1 );
 The function returns `false` if either input value has a `NaN` real or imaginary component.
 
 ```javascript
-var Complex64 = require( '@stdlib/complex-float32-ctor' );
+import Complex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-ctor@deno/mod.js';
 
 var z1 = new Complex64( NaN, 3.0 );
 var z2 = new Complex64( 1.0, 3.0 );
@@ -115,8 +97,8 @@ out = isAlmostEqual( z1, z2, 1 );
 The function does not distinguish between `-0` and `+0`, treating them as equal.
 
 ```javascript
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var Complex64 = require( '@stdlib/complex-float32-ctor' );
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@deno/mod.js';
+import Complex64 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float32-ctor@deno/mod.js';
 
 var z1 = new Complex128( 0.0, 0.0 );
 var z2 = new Complex64( -0.0, -0.0 );
@@ -146,9 +128,9 @@ var out = isAlmostEqual( z1, z2, 0 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var EPS = require( '@stdlib/constants-float64-eps' );
-var Complex128 = require( '@stdlib/complex-float64-ctor' );
-var isAlmostEqual = require( '@stdlib/complex-base-assert-is-almost-equal' );
+import EPS from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float64-eps@deno/mod.js';
+import Complex128 from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-float64-ctor@deno/mod.js';
+import isAlmostEqual from 'https://cdn.jsdelivr.net/gh/stdlib-js/complex-base-assert-is-almost-equal@deno/mod.js';
 
 var z1 = new Complex128( 1.0, 3.0+EPS );
 var z2 = new Complex128( 1.0+EPS, 3.0 );
@@ -192,7 +174,7 @@ console.log( isAlmostEqual( z1, z2, 1 ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
