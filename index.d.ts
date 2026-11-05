@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ComplexLike } from '@stdlib/types/complex';
 
 /**
-* Test whether two complex numbers are approximately equal within a specified number of ULPs (units in the last place).
+* Tests whether two complex numbers are approximately equal within a specified number of ULPs (units in the last place).
 *
-* @module @stdlib/complex-base-assert-is-almost-equal
+* ## Notes
+*
+* -   The function returns `false` if either input value has a `NaN` real or imaginary component.
+* -   The function does not distinguish between `-0` and `+0`, treating them as equal.
+*
+* @param z1 - first complex number
+* @param z2 - second complex number
+* @param maxULP - maximum allowed ULP difference
+* @returns boolean indicating whether two complex numbers are approximately equal within a specified number of ULPs
 *
 * @example
 * var EPS = require( '@stdlib/constants-float64-eps' );
 * var Complex128 = require( '@stdlib/complex-float64-ctor' );
-* var isAlmostEqual = require( '@stdlib/complex-base-assert-is-almost-equal' );
 *
 * var z1 = new Complex128( 1.0, 3.0 );
 * var z2 = new Complex128( 1.0+EPS, 3.0 );
@@ -37,12 +48,9 @@
 * bool = isAlmostEqual( z1, z2, 1 );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function isAlmostEqual( z1: ComplexLike, z2: ComplexLike, maxULP: number ): boolean;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = isAlmostEqual;
